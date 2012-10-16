@@ -8,9 +8,9 @@ class Atom extends Progenitor implements ICompile
 
 
 
-    public function __construct(File $file, Module $module, $value)
+    public function __construct(File $file, Module $module, Progenitor $progenitor = null, $value)
     {
-        parent::__construct($file, $module);
+        parent::__construct($file, $module, $progenitor);
 
         Exception::throwIfIsNotSting($value);
 

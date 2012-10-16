@@ -7,7 +7,7 @@ abstract class Progenitor extends GrandProgenitor
     protected $module;
     protected $progenitor;
 
-    public function __construct(File $file, Module $module, Progenitor $progenitor)
+    public function __construct(File $file, Module $module, Progenitor $progenitor = null)
     {
         parent::__construct($file);
 

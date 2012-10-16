@@ -19,7 +19,7 @@ class Module extends GrandProgenitor implements ICompile
         if (  $name instanceof Atom  ) {
             $atom = $name;
         } elseif (  is_string($name)  ) {
-            $atom = new Atom($file, $this, $name);
+            $atom = new Atom($file, $this, null, $name);
         }
         Exception::throwIfEquals(null, $atom);
 
