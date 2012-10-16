@@ -37,7 +37,7 @@ class File
     }
     public function setIndentation($x)
     {
-        $this->name = $x;
+        $this->indentation = $x;
 
         return $this;
     }
