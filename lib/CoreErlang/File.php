@@ -18,6 +18,32 @@ class File
 
 
 
+    public function getName()
+    {
+        return $this->name;
+    }
+    public function setName($x)
+    {
+        $this->name = $x;
+
+        return $this;
+    }
+
+
+
+    public function getIndentation()
+    {
+        return $this->indentation;
+    }
+    public function setIndentation($x)
+    {
+        $this->name = $x;
+
+        return $this;
+    }
+
+
+
     public function module()
     {
         $this->module = new Module($this, $this->name);
