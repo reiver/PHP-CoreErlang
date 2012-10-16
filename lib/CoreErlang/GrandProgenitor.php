@@ -8,7 +8,7 @@ abstract class GrandProgenitor
 
     public function __construct(File $file)
     {
-        $this->file = file;
+        $this->file = $file;
     }
 
     public function fileEnd()
