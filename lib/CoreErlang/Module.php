@@ -31,6 +31,13 @@ class Module extends GrandProgenitor implements ICompile
 
 
 
+    public function getNameAtom()
+    {
+        return $this->atom;
+    }
+
+
+
 //@TODO
 //    public function attribute()
 //    {

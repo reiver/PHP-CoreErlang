@@ -19,6 +19,13 @@ class Atom extends Progenitor implements ICompile
 
 
 
+    public function getValue()
+    {
+        return $this->value;
+    }
+
+
+
     public function compile($fd, $indentation_level = 0)
     {
 //@TODO: How do escape strings in Core Erlang???
