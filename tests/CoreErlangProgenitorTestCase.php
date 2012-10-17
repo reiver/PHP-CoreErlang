@@ -6,12 +6,14 @@ abstract class CoreErlangProgenitorTestCase extends CoreErlangTestCase
 {
     abstract public function testCreate();
 
+
+
     /**
      * @depends testCreate
      */
-    public function testFileEnd($param)
+    public function testFileEnd($params)
     {
-        list($file, $module, $progenitor, $obj) = $param;
+        list($file, $module, $progenitor, $obj) = $params;
 
         CoreErlang\Exception::throwIfNotInstanceOf('CoreErlang\File'       , $file);
         CoreErlang\Exception::throwIfNotInstanceOf('CoreErlang\Module'     , $module);
@@ -24,9 +26,9 @@ abstract class CoreErlangProgenitorTestCase extends CoreErlangTestCase
     /**
      * @depends testCreate
      */
-    public function testModuleEnd($param)
+    public function testModuleEnd($params)
     {
-        list($file, $module, $progenitor, $obj) = $param;
+        list($file, $module, $progenitor, $obj) = $params;
 
         CoreErlang\Exception::throwIfNotInstanceOf('CoreErlang\File'       , $file);
         CoreErlang\Exception::throwIfNotInstanceOf('CoreErlang\Module'     , $module);
@@ -39,9 +41,9 @@ abstract class CoreErlangProgenitorTestCase extends CoreErlangTestCase
     /**
      * @depends testCreate
      */
-    public function testEnd($param)
+    public function testEnd($params)
     {
-        list($file, $module, $progenitor, $obj) = $param;
+        list($file, $module, $progenitor, $obj) = $params;
 
         CoreErlang\Exception::throwIfNotInstanceOf('CoreErlang\File'       , $file);
         CoreErlang\Exception::throwIfNotInstanceOf('CoreErlang\Module'     , $module);
@@ -50,4 +52,25 @@ abstract class CoreErlangProgenitorTestCase extends CoreErlangTestCase
 
         $this->assertEquals($progenitor, $obj->end());
     }
+
+
+
+    abstract public function testCompilePre();
+
+    /**
+     * @depends testCompilePre
+     */
+    public function testCompile($params)
+    {
+        list($obj, $expected_compiled_contents) = $params;
+
+        CoreErlang\Exception::throwIfNotInstanceOf('CoreErlang\ICompile', $obj);
+
+        $fd = $this->compileBegin();
+            $obj->compile($fd);
+        $compiled_contents = $this->compileEnd();
+
+        $this->assertEquals($expected_compiled_contents, $compiled_contents);
+    }
+
 }
