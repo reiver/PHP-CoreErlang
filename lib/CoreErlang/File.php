@@ -7,6 +7,7 @@ class File
     private $module;
 
     private $name;
+    private $base_path = '';
     private $indentation = "\t";
 
 
@@ -14,6 +15,8 @@ class File
     public function __construct($name)
     {
         $this->name = $name;
+
+        $this->module = new Module($this, $this->name);
     }
 
 
@@ -25,6 +28,19 @@ class File
     public function setName($x)
     {
         $this->name = $x;
+
+        return $this;
+    }
+
+
+
+    public function getBasePath()
+    {
+        return $this->base_path;
+    }
+    public function setBasePath($x)
+    {
+        $this->base_path = $x;
 
         return $this;
     }
@@ -44,10 +60,23 @@ class File
 
 
 
+    public function getPath()
+    {
+        $file_name = $this->name .'.core';
+
+        if (  is_null($this->base_path) || '' == $this->base_path  ) {
+            $path = $file_name;
+        } else {
+            $path = $this->base_path .'/'.  $file_name;
+        }
+
+        return $path;
+    }
+
+
+
     public function module()
     {
-        $this->module = new Module($this, $this->name);
-
         return $this->module;
     }
 
@@ -55,8 +84,10 @@ class File
 
     public function compileToCoreFile()
     {
-        $file_name = $this->name .'.core';
-        $fd = fopen($file_name, 'w');
+        Exception::throwIfNotInstanceOf('CoreErlang\Module', $this->module, 'CoreErlang\File object must have a module before it can be compiled to a .core file.');
+
+        $path = $this->getPath();
+        $fd = fopen($path, 'w');
 
         Exception::throwIfEquals(false, $fd);
 
