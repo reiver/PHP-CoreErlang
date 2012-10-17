@@ -23,6 +23,12 @@ class Atom extends Progenitor implements ICompile
     {
         return $this->value;
     }
+    public function setValue($x)
+    {
+        $this->value = $x;
+
+        return $this;
+    }
 
 
 
