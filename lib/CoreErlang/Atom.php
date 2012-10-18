@@ -12,7 +12,7 @@ class Atom extends Progenitor implements ICompile
     {
         parent::__construct($file, $module, $progenitor);
 
-        Exception::throwIfIsNotSting($value);
+        Exception::throwIfIsNotString($value);
 
         $this->value = $value;
     }

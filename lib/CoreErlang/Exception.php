@@ -47,7 +47,7 @@ class Exception extends \Exception
 
 
 
-    public static function throwIfIsNotSting($actual, $message = null, $code = 0, \Exception $previous = null)
+    public static function throwIfIsNotString($actual, $message = null, $code = 0, \Exception $previous = null)
     {
         if (  !is_string($actual)  ) {
     /////// THROW
@@ -55,7 +55,7 @@ class Exception extends \Exception
         }
     }
 
-    public static function throwIfIsSting($actual, $message = null, $code = 0, \Exception $previous = null)
+    public static function throwIfIsString($actual, $message = null, $code = 0, \Exception $previous = null)
     {
         if (  is_string($actual)  ) {
     /////// THROW
