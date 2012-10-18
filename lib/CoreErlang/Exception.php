@@ -98,4 +98,22 @@ class Exception extends \Exception
             throw new static($message, $code, $previous);
         }
     }
+
+
+
+    public static function throwIfIsNotChar($actual, $message = null, $code = 0, \Exception $previous = null)
+    {
+        if (  !is_string($actual) || 1 != strlen($actual)  ) {
+    /////// THROW
+            throw new static($message, $code, $previous);
+        }
+    }
+
+    public static function throwIfIsChar($actual, $message = null, $code = 0, \Exception $previous = null)
+    {
+        if (  is_string($actual) && 1 == strlen($actual)  ) {
+    /////// THROW
+            throw new static($message, $code, $previous);
+        }
+    }
 }
