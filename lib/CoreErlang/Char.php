@@ -23,9 +23,11 @@ class Char extends Progenitor implements ICompile, ILit
     {
         return $this->value;
     }
-    public function setValue($x)
+    public function setValue($value)
     {
-        $this->value = $x;
+        Exception::throwIfIsNotChar($value);
+
+        $this->value = $value;
 
         return $this;
     }

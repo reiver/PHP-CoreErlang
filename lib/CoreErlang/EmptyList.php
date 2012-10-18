@@ -15,9 +15,9 @@ class EmptyList extends Progenitor implements ICompile, ILit
     {
         return array();
     }
-    public function setValue($x)
+    public function setValue($value)
     {
-        Exception::throwIfNotEquals(array(), $x);
+        Exception::throwIfNotEquals(array(), $value);
 
         return $this;
     }

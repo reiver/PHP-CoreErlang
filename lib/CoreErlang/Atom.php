@@ -23,9 +23,11 @@ class Atom extends Progenitor implements ICompile, ILit
     {
         return $this->value;
     }
-    public function setValue($x)
+    public function setValue($value)
     {
-        $this->value = $x;
+        Exception::throwIfIsNotString($value);
+
+        $this->value = $value;
 
         return $this;
     }
