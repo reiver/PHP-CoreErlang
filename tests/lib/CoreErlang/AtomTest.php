@@ -8,7 +8,7 @@ class AtomTest extends CoreErlangProgenitorTestCase
     {
         list($file, $module) = $this->generateFileAndModule();
 
-        //@TODO - Really, this isn't a value progenitor.
+        //@TODO - Really, this isn't a valid progenitor.
         $progenitor_value = 'testin123'.uniqid();
         $progenitor = new CoreErlang\Atom($file, $module, null, $progenitor_value);
 
