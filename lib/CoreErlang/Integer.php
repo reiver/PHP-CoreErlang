@@ -2,7 +2,7 @@
 
 namespace CoreErlang;
 
-class Integer extends Progenitor implements ICompile
+class Integer extends Progenitor implements ICompile, ILit
 {
     private $value;
 

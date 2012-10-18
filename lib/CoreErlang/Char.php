@@ -2,7 +2,7 @@
 
 namespace CoreErlang;
 
-class Char extends Progenitor implements ICompile
+class Char extends Progenitor implements ICompile, ILit
 {
     private $value;
 

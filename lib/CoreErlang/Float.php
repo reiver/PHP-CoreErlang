@@ -2,7 +2,7 @@
 
 namespace CoreErlang;
 
-class Float extends Progenitor implements ICompile
+class Float extends Progenitor implements ICompile, ILit
 {
     private $value;
 

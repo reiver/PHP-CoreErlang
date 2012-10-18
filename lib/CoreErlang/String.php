@@ -2,7 +2,7 @@
 
 namespace CoreErlang;
 
-class String extends Progenitor implements ICompile
+class String extends Progenitor implements ICompile, ILit
 {
     private $value;
 
