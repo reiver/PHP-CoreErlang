@@ -29,6 +29,38 @@ class Exception extends \Exception
 
 
 
+    public static function throwIfNotInstanceOfAny($expected, $actual, $message = null, $code = 0, \Exception $previous = null)
+    {
+        $is_instance_of_any = false;
+        if (  is_array($expected) && !empty($expected)  ) {
+            foreach ($expected AS $ex) {
+                $is_instance_of_any = $is_instance_of_any || ($actual instanceof $ex);
+            } // foreach
+        }
+
+        if (  ! $is_instance_of_any  ) {
+    /////// THROW
+            throw new static($message, $code, $previous);
+        }
+    }
+
+    public static function throwIfInstanceOfAny($expected, $actual, $message = null, $code = 0, \Exception $previous = null)
+    {
+        $is_instance_of_any = false;
+        if (  is_array($expected) && !empty($expected)  ) {
+            foreach ($expected AS $ex) {
+                $is_instance_of_any = $is_instance_of_any || ($actual instanceof $ex);
+            } // foreach
+        }
+
+        if (  $is_instance_of_any  ) {
+    /////// THROW
+            throw new static($message, $code, $previous);
+        }
+    }
+
+
+
     public static function throwIfNotEquals($expected, $actual, $message = null, $code = 0, \Exception $previous = null)
     {
         if (  $expected !== $actual  ) {
