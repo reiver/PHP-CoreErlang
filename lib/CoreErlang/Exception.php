@@ -80,4 +80,22 @@ class Exception extends \Exception
             throw new static($message, $code, $previous);
         }
     }
+
+
+
+    public static function throwIfIsNotFloat($actual, $message = null, $code = 0, \Exception $previous = null)
+    {
+        if (  !is_float($actual)  ) {
+    /////// THROW
+            throw new static($message, $code, $previous);
+        }
+    }
+
+    public static function throwIfIsFloat($actual, $message = null, $code = 0, \Exception $previous = null)
+    {
+        if (  is_float($actual)  ) {
+    /////// THROW
+            throw new static($message, $code, $previous);
+        }
+    }
 }
