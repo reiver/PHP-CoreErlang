@@ -35,12 +35,19 @@ abstract class CoreErlangTestCase extends PHPUnit_Framework_TestCase
 
 
 
-    public function generateFileAndModule()
+    public function generateFile()
     {
         $file = CoreErlang::file('unittest');
-        $module = $file->module();
 
         $this->assertInstanceOf('CoreErlang\File',   $file);
+
+        return $file;
+    }
+    public function generateFileAndModule()
+    {
+        $file   = $this->generateFile();
+        $module = $file->module();
+
         $this->assertInstanceOf('CoreErlang\Module', $module);
 
         $result = array($file, $module);
