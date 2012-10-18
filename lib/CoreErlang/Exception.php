@@ -29,17 +29,17 @@ class Exception extends \Exception
 
 
 
-    public static function throwIfEquals($expected, $actual, $message = null, $code = 0, \Exception $previous = null)
+    public static function throwIfNotEquals($expected, $actual, $message = null, $code = 0, \Exception $previous = null)
     {
-        if (  $expected === $actual  ) {
+        if (  $expected !== $actual  ) {
     /////// THROW
             throw new static($message, $code, $previous);
         }
     }
 
-    public static function throwIfNotEquals($expected, $actual, $message = null, $code = 0, \Exception $previous = null)
+    public static function throwIfEquals($expected, $actual, $message = null, $code = 0, \Exception $previous = null)
     {
-        if (  $expected !== $actual  ) {
+        if (  $expected === $actual  ) {
     /////// THROW
             throw new static($message, $code, $previous);
         }
