@@ -22,6 +22,27 @@ class IntegerTest extends CoreErlangProgenitorTestCase
 
 
 
+    public function testGetAndSetValue()
+    {
+        list($file, $module) = $this->generateFileAndModule();
+
+        $value1 = rand(-9999,9999);
+
+        $obj = new CoreErlang\Integer($file, $module, null, $value1);
+
+        $this->assertEquals($value1, $obj->getValue());
+
+
+
+        $value2 = rand(-9999,9999);
+
+        $obj->setValue($value2);
+
+        $this->assertEquals($value2, $obj->getValue());
+    }
+
+
+
     public function testCompilePre()
     {
         list($file, $module) = $this->generateFileAndModule();

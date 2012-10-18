@@ -22,6 +22,27 @@ class FloatTest extends CoreErlangProgenitorTestCase
 
 
 
+    public function testGetAndSetValue()
+    {
+        list($file, $module) = $this->generateFileAndModule();
+
+        $value1 = (float) ( rand(-9999,9999) / 7000.0 );
+
+        $obj = new CoreErlang\Float($file, $module, null, $value1);
+
+        $this->assertEquals($value1, $obj->getValue());
+
+
+
+        $value2 = (float) ( rand(-9999,9999) / 7000.0 );
+
+        $obj->setValue($value2);
+
+        $this->assertEquals($value2, $obj->getValue());
+    }
+
+
+
     public function testCompilePre()
     {
         list($file, $module) = $this->generateFileAndModule();

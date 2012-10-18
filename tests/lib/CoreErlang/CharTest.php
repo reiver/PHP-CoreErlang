@@ -22,6 +22,27 @@ class CharTest extends CoreErlangProgenitorTestCase
 
 
 
+    public function testGetAndSetValue()
+    {
+        list($file, $module) = $this->generateFileAndModule();
+
+        $value1 = chr( rand(1,127)  );
+
+        $obj = new CoreErlang\Char($file, $module, null, $value1);
+
+        $this->assertEquals($value1, $obj->getValue());
+
+
+
+        $value2 = chr( rand(1,127)  );
+
+        $obj->setValue($value2);
+
+        $this->assertEquals($value2, $obj->getValue());
+    }
+
+
+
     public function testCompilePre()
     {
         list($file, $module) = $this->generateFileAndModule();
