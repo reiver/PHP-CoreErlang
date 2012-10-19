@@ -12,7 +12,7 @@ class CharTest extends CoreErlangProgenitorTestCase
         $progenitor_value = chr( rand(1,127)  );
         $progenitor = new CoreErlang\Char($file, $module, null, $progenitor_value);
 
-        $obj_value = chr( rand(1,127)  );
+        $obj_value = chr(  rand(1,127)  );
         $obj    = new CoreErlang\Char($file, $module, $progenitor, $obj_value);
 
         $results = array($file, $module, $progenitor, $obj);
@@ -26,7 +26,7 @@ class CharTest extends CoreErlangProgenitorTestCase
     {
         list($file, $module) = $this->generateFileAndModule();
 
-        $value1 = chr( rand(1,127)  );
+        $value1 = chr(  rand(1,127)  );
 
         $obj = new CoreErlang\Char($file, $module, null, $value1);
 
@@ -34,7 +34,7 @@ class CharTest extends CoreErlangProgenitorTestCase
 
 
 
-        $value2 = chr( rand(1,127)  );
+        $value2 = chr(  rand(1,127)  );
 
         $obj->setValue($value2);
 
@@ -46,7 +46,7 @@ class CharTest extends CoreErlangProgenitorTestCase
     public function testCompilePre()
     {
         list($file, $module) = $this->generateFileAndModule();
-        $value = chr( rand(1,127)  );
+        $value = chr(  rand(1,127)  );
         $obj = new CoreErlang\Char($file, $module, null, $value);
 
 //@TODO - is this correct for a char?
