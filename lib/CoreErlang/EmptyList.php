@@ -2,7 +2,7 @@
 
 namespace CoreErlang;
 
-class EmptyList extends Progenitor implements ICompile, ILit
+class EmptyList extends Progenitor implements ICompile, IConstant, ILit
 {
     public function __construct(File $file, Module $module, Progenitor $progenitor = null)
     {
