@@ -2,7 +2,7 @@
 
 namespace CoreErlang;
 
-class EmptyList extends Progenitor implements ICompile, IConstant, ILit
+class EmptyList extends Progenitor implements ICompile, IConstant, IList, ILit
 {
     public function __construct(File $file, Module $module, Progenitor $progenitor = null)
     {
@@ -18,6 +18,30 @@ class EmptyList extends Progenitor implements ICompile, IConstant, ILit
     public function setValue($value)
     {
         Exception::throwIfNotEquals(array(), $value);
+    }
+
+
+
+    public function getHead()
+    {
+        throw Exception('Undefined');
+    }
+    public function setHead($vhead)
+    {
+        throw Exception('Undefined');
+
+        return $this;
+    }
+
+
+
+    public function getTail()
+    {
+        throw Exception('Undefined');
+    }
+    public function setTail($tail)
+    {
+        throw Exception('Undefined');
 
         return $this;
     }
