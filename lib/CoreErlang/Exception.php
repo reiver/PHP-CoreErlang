@@ -148,4 +148,22 @@ class Exception extends \Exception
             throw new static($message, $code, $previous);
         }
     }
+
+
+
+    public static function throwIfIsNotNull($actual, $message = null, $code = 0, \Exception $previous = null)
+    {
+        if (  !is_null($actual)  ) {
+    /////// THROW
+            throw new static($message, $code, $previous);
+        }
+    }
+
+    public static function throwIfIsNull($actual, $message = null, $code = 0, \Exception $previous = null)
+    {
+        if (  is_null($actual)  ) {
+    /////// THROW
+            throw new static($message, $code, $previous);
+        }
+    }
 }
