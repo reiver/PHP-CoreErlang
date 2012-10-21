@@ -19,7 +19,7 @@ class ConstantTuple extends Progenitor implements ICompile, IConstant, ITuple
     public function append($x)
     {
         if (  ! $x instanceof IConstant  ) {
-            $x = CoreErlang::lit($this->file, $this->module, $this->progenitor, $x);
+            $x = \CoreErlang::lit($this->file, $this->module, $this->progenitor, $x);
         }
 
         Exception::throwIfNotInstanceOf('CoreErlang\IConstant', $x);
@@ -39,10 +39,11 @@ class ConstantTuple extends Progenitor implements ICompile, IConstant, ITuple
 
                 if (  ! $first_iteration  ) {
                     fwrite($fd, ', ');
-
-                    $this->x->compile($fd);
                 }
 
+                $x->compile($fd);
+
+                $first_iteration = false;
             } // foreach
         }
 
