@@ -1,6 +1,6 @@
 <?php
 
-require_once(  __DIR__ .'/../../CoreErlangProgenitorTestCase.php'  );
+require_once(  __DIR__ .'/../../../CoreErlangProgenitorTestCase.php'  );
 
 class EmptyListTest extends CoreErlangProgenitorTestCase
 {
