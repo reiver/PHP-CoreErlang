@@ -2,7 +2,7 @@
 
 namespace CoreErlang;
 
-class Lit extends Progenitor implements ICompile, IConstant, ILit
+class Lit extends Progenitor implements ICompile, IConstant, ILit, IExpression
 {
     public static $LIT_CLASS_NAMES = array(
         'CoreErlang\Integer'     ,

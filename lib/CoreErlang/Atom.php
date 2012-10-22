@@ -2,7 +2,7 @@
 
 namespace CoreErlang;
 
-class Atom extends Progenitor implements ICompile, IConstant, ILit
+class Atom extends Progenitor implements ICompile, IConstant, ILit, IExpression
 {
     private $value;
 
